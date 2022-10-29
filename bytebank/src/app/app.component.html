@@ -1,2 +1,11 @@
-<!--aqui fazemos a inserção do nosso componente, local onde ele é renderizado-->
-<app-nova-transferencia></app-nova-transferencia>
+<!--aqui fazemos a inserção do nosso componente, local onde ele é renderizado/invocado-->
+
+<!--transferindo meu evento (ao transferir), para um método LOCAL = transferir. E ($event=valorEmitir) a ser emitido, que fica dentro de uma variável chamada event-->
+<app-nova-transferencia
+ (aoTransferir)="transferir($event)"
+ ></app-nova-transferencia>
+<!--criando atributo transferencia e transferindo a propriedade para o componente-->
+<app-extrato></app-extrato>
+
+<!--A interrogação serve para inicializar o valor digitado dentro da variável transferencia -->
+
