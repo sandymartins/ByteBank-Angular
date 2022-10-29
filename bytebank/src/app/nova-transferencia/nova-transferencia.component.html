@@ -1,0 +1,22 @@
+<!--ng serve — This command builds, deploy, serves and every time watches your code changes.-->
+<!--HTML = Arquivo de template-->
+
+<section class='container'>
+  <!--Data binding: Passando um evento pra uma propriedade em torno do Angular-->
+  <form class='formulario' (ngSubmit)="transferir()"> <!--Passando meu método criado na nova-transferencia.component.ts-->
+    <h2 class='formulario__titulo'>Nova Transferência</h2>
+
+    <div class='form-field'>
+      <label class='form-field__label' for='valor'>Valor</label>
+      <input class='form-field__input' id='valor' type='text' [(ngModel)]='valor' name='valor'>
+    </div>
+    <div class='form-field'>
+      <label class='form-field__label' for='destino'>Destino</label>
+      <input class='form-field__input' id='destino' type='text' [(ngModel)]='destino' name="destino">
+    </div>
+
+    <div class='botao-wrapper'>
+      <button class='botao' type="submit">Transferir</button><!--Declarei o type='submit' para que seja enviada a solicitação do meu método-->
+    </div>
+  </form>
+</section>
