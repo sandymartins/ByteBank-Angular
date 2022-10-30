@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ExtratoComponent } from './extrato/extrato.component';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //função para registrar o local
@@ -16,14 +17,10 @@ registerLocaleData(localePt, 'pt');//id pt
 @NgModule({
   //local onde todos os componentes são declarados
   declarations: [
-    AppComponent,
-    novaTransferenciaComponent,
-    ExtratoComponent //declarado automaticamente com o comando ng generate
-  ],
-  imports: [//aqui importo pra dentro do projeto minhas funcionalidades do cód, meus métodos
-  BrowserModule,
-  FormsModule //biblioteca do angular
-  ],
+    AppComponent,novaTransferenciaComponent,ExtratoComponent //declarado automaticamente com o comando ng generate
+],
+  imports: [//Bibliotecas onde aqui importo pra dentro do projeto minhas funcionalidades do cód, meus métodos.
+  BrowserModule, FormsModule, HttpClientModule],
   providers: [
     //INJEÇÃO DE DEPENDÊNCIAS: Coisas que vao ser instaciadas no momento que app rodar.
     { provide: LOCALE_ID, useValue: 'pt' },
