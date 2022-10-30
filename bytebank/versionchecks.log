@@ -1,0 +1,5 @@
+Package         Current  Wanted  Latest  Location                     Depended by
+@angular/cli     14.1.3  14.1.3  14.2.7  node_modules/@angular/cli    bytebank
+@types/jasmine    4.0.3   4.0.3   4.3.0  node_modules/@types/jasmine  bytebank
+jasmine-core      4.2.0   4.2.0   4.5.0  node_modules/jasmine-core    bytebank
+typescript        4.7.4   4.7.4   4.8.4  node_modules/typescript      bytebank

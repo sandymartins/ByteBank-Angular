@@ -4,9 +4,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Transferencia } from './../models/transferencia.model';
 
-//injeção de dependência
+//classe com todas as injeçôes de dependências e armazena dados do usuário como um "array"
 //ao invés de criar um objeto com array e depois instaciar o objeto.
 //Simplesmente crio um construtor que vai injetar uma dependência chamada TransferenciaService
+
+//enviamos esses dados para a API externa
 
 
 //Como poderíamos obter o valor total das transferências cadastradas?
@@ -17,7 +19,7 @@ import { Transferencia } from './../models/transferencia.model';
 })
 export class TransferenciaService {
   private listaTransferencia: any[];
-  private url = 'http://localhost:3000/transferencias';
+  private url = 'http://localhost:3000/transferencias/';
 
   constructor(private httpClient: HttpClient) {//classe que prove métodos que façam as requisições rest GET, POST, PUT e DELETE
     this.listaTransferencia = [];
@@ -26,14 +28,16 @@ export class TransferenciaService {
   get transferencias(){//pega as dependencias
     return this.listaTransferencia;//e coloca dentro da lista
   }
- //métodoo observable pq só será executado se for feita a requisicao
-  todas(){ Observable<Transferencia[]>//método que vai retornar todas as transferencias
-    return this.httpClient.get<Transferencia[]>(this.url);//através da minha propriedade httpClient injetada, vou fazer uma requisicao GET, passando a url localhosttransferencias
-  }
-  adicionar(transferencia: any){//recebendo transferencia como parametro
+
+  adicionar(transferencia: Transferencia): Observable<Transferencia> {//recebendo transferencia como parametro
     this.hidratar(transferencia);
-    this.listaTransferencia.push(transferencia); //declarando que transferencia vai adicionar o valor que está em evento
+    return this.httpClient.post<Transferencia>(this.url, transferencia); //declarando que transferencia vai adicionar o valor que está em evento
   }
+
+   //métodoo observable pq só será executado se for feita a requisicao, ou seja, em algum momento futuro
+   todas(){ Observable<Transferencia[]>//método que vai retornar todas as transferencias
+   return this.httpClient.get<Transferencia[]>(this.url);//através da minha propriedade httpClient injetada, vou fazer uma requisicao GET, passando a url localhosttransferencias
+   }
 
   private hidratar(transferencia: any){//recebendo transferencia como parametro
     transferencia.data = new Date();//criando um objeto

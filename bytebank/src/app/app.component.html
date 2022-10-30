@@ -1,11 +1,7 @@
-<!--aqui fazemos a inserção do nosso componente, local onde ele é renderizado/invocado-->
-
-<!--transferindo meu evento (ao transferir), para um método LOCAL = transferir. E ($event=valorEmitir) a ser emitido, que fica dentro de uma variável chamada event-->
-<app-nova-transferencia
- (aoTransferir)="transferir($event)"
- ></app-nova-transferencia>
-<!--criando atributo transferencia e transferindo a propriedade para o componente-->
-<app-extrato></app-extrato>
-
-<!--A interrogação serve para inicializar o valor digitado dentro da variável transferencia -->
-
+<header>
+  <a routerLink="extrato">ByteBank</a>
+  <a routerLink="nova-transferencia" routerLinkActive="ativo">Nova Transferência</a><!--Router link vai ocultar a de novaTransferencia quando estiver ativo a classe .ativo (dentro dessa classe tem o display:none)-->
+</header>
+<main>
+<router-outlet></router-outlet>
+</main>
