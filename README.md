@@ -3,6 +3,11 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="10%"/>
 </div>
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/52469840/198910995-1bd1c258-dd11-4387-b207-94f00bd29a5d.png" alt="" width="50%">
+  <img src="https://i.imgur.com/WVdLA2O.png](https://i.imgur.com/VbvjV9i.png)" alt="" width="50%">
+</div>
+
 <h2>
    Technologies:
 </h2>
